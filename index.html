@@ -16,5 +16,27 @@ width:60%; pointer-events:none;">
 navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
 .then(stream => cam.srcObject = stream);
 </script>
+  <button id="playBtn"
+style="position:fixed; bottom:10%; left:50%;
+transform:translateX(-50%);
+font-size:18px; padding:12px 20px; z-index:10;">
+▶ Ovozni yoqish
+</button>
+
+<video id="talk"
+playsinline
+style="position:fixed; bottom:20%; left:50%;
+transform:translateX(-50%);
+width:60%;">
+<source src="video.mp4" type="video/mp4">
+</video>
+
+<script>
+const v = document.getElementById("talk");
+document.getElementById("playBtn").onclick = () => {
+  v.muted = false;
+  v.play();
+};
+</script>
 </body>
 </html>
